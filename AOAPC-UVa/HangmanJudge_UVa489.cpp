@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -8,6 +7,7 @@ int c[127];
 int cc[127];
 
 int main() {
+	
 	/*freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);*/
 
