@@ -1,55 +1,56 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <cstdio>
+#include <cstring>
 #include <iostream>
-#include <unordered_map>
-#include <cmath>
-#include <string>
 using namespace std;
+char code[8][500];
 
-string to2str(int w, int n) {
-	string s = to_string(n % 2);
-	n /= 2;
-	while (n) {
-		s = to_string(n % 2) + s;
-		n /= 2;
+char readchar() {
+	char c;
+	while ((c = getchar()) == '\n')
+		continue;
+	return c;
+}
+int readint(int n) {
+	int v=0;
+	while (n--) {
+		char c = readchar();
+		v = v * 2 + c - '0';
 	}
-	while (s.length() < w) {
-		s = "0" + s;
-	}
-	return s;
+	return v;
+}
+bool readcode() {
+	memset(code, 0, sizeof(code));
+	int len = 1, v = 0;
+	for(len=1; len<8; ++len)
+		for (v = 0; v < (1 << len) - 1; v++) {
+			char c = getchar();
+			if (c == EOF) return false;
+			if (c == '\n') return true;
+			code[len][v] = c;
+		}
+	return true;
 }
 
+
 int main() {
-	string temp;
-	unordered_map<string, char> m;
-	char c;
-	while (scanf("%c", &c)!=EOF) {
-		if (c == '\n')continue;
-		int w = 1;
-		int count = -1;
-		m.clear();
+	/*freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);*/
 
-		do {
-			++count;
-			temp = to2str(w, count);
-			m.insert(make_pair(temp, c));
-
-			if (count == (int)exp2(w) - 2) {
-				count = -1;
-				++w;
+	while (readcode()) {
+		while (true) {
+			int len = readint(3);
+			if (len == 0)
+				break;
+			while (true) {
+				int v = readint(len);
+				if (v == (1 << len) - 1)
+					break;
+				printf("%c", code[len][v]);
 			}
-		} while (scanf("%c", &c) && c != '\n');
-		
-		w = 0;
-		for (int i = 2; i >= 0; --i) {
-			scanf("%c", c);
-			if (c - '0') w += (int)exp2(i);
 		}
-		
-		while (scanf("%c", c)) {
-			if (c == '\n') continue;
-			temp.clear();
-			temp += c;
-			for(int i=1; i<w)
-		}
-
+		getchar();
+		std::cout << std::endl;
 	}
+	return 0;
 }
