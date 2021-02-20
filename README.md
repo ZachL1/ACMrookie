@@ -13,3 +13,6 @@
 
 [陈锋给出的习题各程序及选解（绿书的github）](https://github.com/sukhoeing/aoapc-bac2nd-keys)
 
+### 《挑战程序设计竞赛》
+
+[白书《挑战程序设计竞赛》（第二版）题单](https://vjudge.net/article/426)
