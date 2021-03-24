@@ -1,0 +1,7 @@
+*.txt
+test.cpp
+.DS_Store
+*.xcodeproj
+蓝桥杯/
+Algorithm-notes/
+.vscode/
