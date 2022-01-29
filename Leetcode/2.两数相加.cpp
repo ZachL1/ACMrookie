@@ -19,11 +19,29 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        suml = new ListNode();
-        ListNode *suml, *curr = suml;
-        do {
-            
+        ListNode* head = new ListNode((l1->val + l2->val) % 10);
+        int add = (l1->val + l2->val) / 10;
+        ListNode* curr = head;
+
+        l1 = l1->next;
+        l2 = l2->next;
+        
+        while (l1 || l2) {
+            int sum = add;
+            if (l1) {
+                sum += l1->val;
+                l1 = l1->next;
+            }
+            if (l2) {
+                sum += l2->val;
+                l2 = l2->next;
+            }
+            curr->next = new ListNode(sum % 10);
+            curr = curr->next;
+            add = sum / 10;
         }
+        if (add) curr->next = new ListNode(add);
+        return head;
 
         // 试图节省内存，在原来链表上修改，其实没有必要
         // int add = 0;
