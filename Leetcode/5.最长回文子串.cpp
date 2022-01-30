@@ -17,6 +17,7 @@ public:
         int maxl, maxr;
         for (int l = 0; l < s.size(); ++l) {
             for (int r = l; r < s.size(); ++r) {
+                // 剪枝
                 if ((r-l > maxr-maxl) && isPalindrome(l, r)) {
                     maxr = r;
                     maxl = l;
