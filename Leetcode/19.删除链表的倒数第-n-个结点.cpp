@@ -23,7 +23,7 @@ public:
         ListNode *pioneer = head;
         while (n--) pioneer = pioneer->next;
 
-        if (pioneer == nullptr) {
+        if (pioneer == nullptr) { 
             // 要删除的是头节点
             head = head->next;
         }
@@ -35,7 +35,7 @@ public:
             }
             latter->next = latter->next->next;
         }
-        
+
         return head;
     }
 };
