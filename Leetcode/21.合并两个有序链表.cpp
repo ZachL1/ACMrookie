@@ -18,35 +18,17 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        if (!list1) return list2;
-        if (!list2) return list1;
+        ListNode head(-1, list1);
+        ListNode *curr = &head, *other = list2, *temp;
 
-        ListNode *head, *start, *end;
-        if(list1->val < list2->val) head = list1;
-        else head = list2;
-
-        while (list1 && list2) {
-            // if (list1) {
-                start = list1;
-                while (list1 && (list1->val < list2->val)) {
-                    end = list1;
-                    list1 = list1->next;
-                }
-                end->next = list2->next;
-                list2->next = start;
-                if (!list1) break;
-
-            // } else {
-                start = list2;
-                while (list2 && (list1->val >= list2->val)) {
-                    end = list2;
-                    list2 = list2->next;
-                }
-                end->next = list1->next;
-                list1->next = start;
-            // }
+        while (curr && other) {
+            while (curr->next && curr->next->val <= other->val) curr = curr->next;
+            temp = other;
+            other = curr->next;
+            curr->next = temp;
         }
-        return head;
+
+        return head.next;
     }
 };
 // @lc code=end
