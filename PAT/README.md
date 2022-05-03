@@ -1,11 +1,19 @@
+备考六月份的 PAT，加油！
 
+- :warning: ：有需要注意的地方
+- :+1: ：有可取之处，复习时值得认真看看
+- 
+
+
+
+柳神的题解：[GitHub](https://github.com/liuchuo/PAT)、[CSDN](https://liuchuo.blog.csdn.net/)
 
 根据柳神的资料整理的PAT甲级的155道题目的分类：
 
 |TODO|类型|题号|
 |:--:|----|----|
 |				|水题				|					1136、1139、1143、1148|
-|:white_check_mark:		|字符串处理		|					1001、1005、1035、1061、1073、1077、1082、1108、1140、1152|
+|:white_check_mark:		|字符串处理		| 1001、1005、1035、:warning:[1061](./Advanced/1061_Dating_20.cpp)、:+1:[1073](./Advanced/1073_Scientific_Notation_20.cpp)、1082、1108、1140、1152 |
 |				|模拟				|					1002、1009、1017、1026、1042、1046、1065、1105|
 |		|查找元素		|						1006、1011、1036|
 |		|动态规划		|						1007、1040、1045、1068|
@@ -46,11 +54,11 @@
 |				|红黑树				|				1135|
 |				|深度回溯				|				1155|
 
-柳神的题解：[GitHub](https://github.com/liuchuo/PAT)、[CSDN](https://liuchuo.blog.csdn.net/)
 
 
 
 
+-----
 
 此外，以下内容来自 [这篇博客](https://blog.csdn.net/a617976080/article/details/89676670) 。
 
