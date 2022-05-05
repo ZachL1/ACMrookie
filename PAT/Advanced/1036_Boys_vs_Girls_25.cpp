@@ -3,7 +3,7 @@
 #include <string>
 
 using namespace std;
-
+ 
 struct people{
     string name, ID;
     char gender;
